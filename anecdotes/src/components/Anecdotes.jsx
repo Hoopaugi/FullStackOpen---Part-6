@@ -23,7 +23,7 @@ const Anecdotes = () => {
     return anecdotes.filter((anecdote) => anecdote.content.toLowerCase().includes(filter.toLowerCase())) 
   })
 
-  const sortedAnecdotes = anecdotes.sort((a, b) => { return b.votes - a.votes })
+  const sortedAnecdotes = anecdotes.slice().sort((a, b) => { return b.votes - a.votes })
 
   return (
     <>

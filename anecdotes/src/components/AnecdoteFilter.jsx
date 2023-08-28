@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 
-import { filterChange } from '../reducers/filterReducer'
+import { change } from '../reducers/filterReducer'
 
 const AnecdoteFilter = (props) => {
   const dispatch = useDispatch()
@@ -8,7 +8,7 @@ const AnecdoteFilter = (props) => {
   const changeFilter = (event) => {
     const filter = event.target.value
 
-    dispatch(filterChange(filter))
+    dispatch(change(filter))
   }
 
   return (
