@@ -15,11 +15,12 @@ const Anecdotes = () => {
   const dispatch = useDispatch()
 
   const anecdotes = useSelector(state => state)
-  console.log(anecdotes)
+  const sortedAnecdotes = anecdotes.sort((a, b) => { return b.votes - a.votes })
+
   return (
     <>
       <h2>Anecdotes</h2>
-      {anecdotes.map(anecdote => <Anecdote key={anecdote.id} anecdote={anecdote} handleVote={() => dispatch(vote(anecdote.id))} />)}
+      {sortedAnecdotes.map(anecdote => <Anecdote key={anecdote.id} anecdote={anecdote} handleVote={() => dispatch(vote(anecdote.id))} />)}
     </>
   )
 }
